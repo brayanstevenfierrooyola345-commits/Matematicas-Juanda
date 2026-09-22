@@ -1,0 +1,186 @@
+:root {
+  --bg-main: #0a0d14;
+  --bg-card: rgba(20, 26, 40, 0.7);
+  --border-card: rgba(0, 229, 255, 0.2);
+  --cyber-neon: #00e5ff;
+  --cyber-purple: #7000ff;
+  --text-main: #e2e8f0;
+  --font-family: 'Space Grotesk', sans-serif;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--font-family);
+  min-height: 100vh;
+}
+
+/* Tipografía y Colores */
+.text-cyber { color: var(--cyber-neon) !important; }
+.text-gradient {
+  background: linear-gradient(135deg, var(--cyber-neon), var(--cyber-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.max-w-700 { max-width: 700px; }
+
+/* Hero Section */
+.hero-section {
+  padding: 100px 20px 80px;
+  background: radial-gradient(circle at center, rgba(112, 0, 255, 0.15) 0%, transparent 70%);
+}
+.badge-tech {
+  display: inline-block;
+  padding: 8px 16px;
+  background: rgba(0, 229, 255, 0.1);
+  border: 1px solid var(--cyber-neon);
+  color: var(--cyber-neon);
+  border-radius: 50px;
+  font-size: 0.85rem;
+}
+
+/* Botones Cyber */
+.btn-cyber {
+  background: transparent;
+  color: var(--cyber-neon);
+  border: 1px solid var(--cyber-neon);
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.btn-cyber:hover {
+  background: var(--cyber-neon);
+  color: #000;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+}
+
+.btn-cyber-action {
+  background: linear-gradient(135deg, var(--cyber-neon), var(--cyber-purple));
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+.btn-cyber-action:hover {
+  opacity: 0.9;
+  box-shadow: 0 0 25px rgba(112, 0, 255, 0.4);
+}
+
+/* Tarjetas Cyber (Glassmorphism) */
+.cyber-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+.card-header-cyber {
+  padding: 20px 25px;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid var(--border-card);
+}
+.tag-number {
+  font-size: 0.75rem;
+  color: var(--cyber-neon);
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+.card-body-cyber {
+  padding: 30px 25px;
+}
+
+/* Fraccionarios Inputs */
+.fraccion-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.fraccion-linea {
+  width: 100%;
+  height: 2px;
+  background-color: var(--cyber-neon);
+}
+.cyber-input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.cyber-input:focus {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--cyber-neon);
+  color: #fff;
+  box-shadow: none;
+}
+.cyber-select {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--cyber-neon);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Res Cards */
+.res-card {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px dashed var(--border-card);
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+/* Juego Ecuaciones */
+.display-ecuacion {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+}
+.btn-opcion {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding: 15px;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+.btn-opcion:hover:not(:disabled) {
+  background: rgba(0, 229, 255, 0.2);
+  border-color: var(--cyber-neon);
+}
+.panel-stats {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Grid de Figuras Geométricas */
+.grid-figuras {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.btn-figura {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-main);
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+.btn-figura:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+.btn-figura.active {
+  background: rgba(0, 229, 255, 0.15);
+  border-color: var(--cyber-neon);
+  color: var(--cyber-neon);
+}

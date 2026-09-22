@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio Interactivo | Juan Valderrama</title>
+
+  <!-- Fuentes e Iconos -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Estilos Personalizados -->
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <!-- HERO / BIENVENIDA -->
+  <header class="hero-section text-center position-relative d-flex align-items-center justify-content-center">
+    <div class="hero-bg-glow"></div>
+    <div class="container position-relative z-2">
+      <span class="badge-tech mb-3"><i class="bi bi-terminal-fill me-2"></i>SENA ADSO | Ficha 3387498</span>
+      <h1 class="display-3 fw-bold text-gradient mb-3">Juan David Valderrama</h1>
+      <p class="lead text-light-50 mx-auto max-w-700">
+        Mostrario interactivo de lógica y desarrollo web. Ejercicios construidos en formación con HTML5, CSS3 y JavaScript bajo la orientación del instructor <strong>@ALCANDERSOFT</strong>.
+      </p>
+      <a href="#ejercicios" class="btn btn-cyber mt-4">
+        Explorar Laboratorio <i class="bi bi-arrow-down-short fs-4 align-middle"></i>
+      </a>
+    </div>
+  </header>
+
+  <!-- CONTENEDOR PRINCIPAL -->
+  <main id="ejercicios" class="container py-5">
+
+    <!-- EJERCICIO 01: FRACCIONARIOS -->
+    <section class="cyber-card mb-5">
+      <div class="card-header-cyber d-flex justify-content-between align-items-center">
+        <div>
+          <span class="tag-number">MÓDULO 01</span>
+          <h2 class="h4 mb-0">Operaciones con Fraccionarios</h2>
+        </div>
+        <i class="bi bi-calculator fs-2 text-cyber"></i>
+      </div>
+
+      <div class="card-body-cyber">
+        <div class="row align-items-center justify-content-center g-3 text-center">
+          
+          <!-- Fracción 1 -->
+          <div class="col-6 col-md-3">
+            <div class="fraccion-box">
+              <input type="number" id="num1" class="form-control cyber-input" placeholder="Num 1">
+              <div class="fraccion-linea"></div>
+              <input type="number" id="den1" class="form-control cyber-input" placeholder="Den 1">
+            </div>
+          </div>
+
+          <!-- Operador -->
+          <div class="col-12 col-md-2">
+            <select id="operacionFraccion" class="form-select cyber-select text-center">
+              <option value="suma">+</option>
+              <option value="resta">-</option>
+              <option value="multiplicacion">×</option>
+              <option value="division">÷</option>
+            </select>
+          </div>
+
+          <!-- Fracción 2 -->
+          <div class="col-6 col-md-3">
+            <div class="fraccion-box">
+              <input type="number" id="num2" class="form-control cyber-input" placeholder="Num 2">
+              <div class="fraccion-linea"></div>
+              <input type="number" id="den2" class="form-control cyber-input" placeholder="Den 2">
+            </div>
+          </div>
+
+          <!-- Resultado -->
+          <div class="col-12 col-md-4 mt-4 mt-md-0">
+            <div class="res-card">
+              <span class="text-uppercase text-muted small d-block mb-1">Resultado Simplificado</span>
+              <div id="resFraccion" class="display-6 fw-bold text-cyber">0 / 0</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="text-center mt-4">
+          <button onclick="calcularFraccion()" class="btn btn-cyber-action px-4 py-2">
+            <i class="bi bi-cpu me-2"></i>Calcular Fracción
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- EJERCICIO 02: ADIVINA LA ECUACIÓN -->
+    <section class="cyber-card mb-5">
+      <div class="card-header-cyber d-flex justify-content-between align-items-center">
+        <div>
+          <span class="tag-number">MÓDULO 02</span>
+          <h2 class="h4 mb-0">Reto de Ecuaciones de Primer Grado</h2>
+        </div>
+        <i class="bi bi-controller fs-2 text-cyber"></i>
+      </div>
+
+      <div class="card-body-cyber">
+        <div class="row g-4 align-items-center">
+          
+          <div class="col-lg-8">
+            <div class="display-ecuacion text-center py-4 mb-4">
+              <span class="text-muted small d-block mb-2">Resuelve para $X$:</span>
+              <h3 id="ecuacionTexto" class="display-5 text-white fw-bold mb-0">Presiona Iniciar</h3>
+            </div>
+
+            <div class="row g-3" id="contenedorOpciones">
+              <div class="col-4">
+                <button onclick="verificarRespuesta(0)" class="btn btn-opcion w-100" id="opt0" disabled>A</button>
+              </div>
+              <div class="col-4">
+                <button onclick="verificarRespuesta(1)" class="btn btn-opcion w-100" id="opt1" disabled>B</button>
+              </div>
+              <div class="col-4">
+                <button onclick="verificarRespuesta(2)" class="btn btn-opcion w-100" id="opt2" disabled>C</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="panel-stats p-3 rounded-4">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-muted"><i class="bi bi-clock me-1"></i>Tiempo:</span>
+                <span id="timerJuego" class="fw-bold fs-4 text-warning">00s</span>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="text-muted"><i class="bi bi-trophy me-1"></i>Aciertos:</span>
+                <span id="puntosJuego" class="fw-bold fs-5 text-success">0</span>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mb-4">
+                <span class="text-muted"><i class="bi bi-x-circle me-1"></i>Errores:</span>
+                <span id="erroresJuego" class="fw-bold fs-5 text-danger">0</span>
+              </div>
+
+              <button onclick="iniciarJuego()" id="btnStartJuego" class="btn btn-cyber-action w-100">
+                <i class="bi bi-play-fill me-1"></i>Iniciar Juego
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- EJERCICIO 03: REPRODUCTOR DE VIDEO -->
+    <section class="cyber-card mb-5">
+      <div class="card-header-cyber d-flex justify-content-between align-items-center">
+        <div>
+          <span class="tag-number">MÓDULO 03</span>
+          <h2 class="h4 mb-0">Contenido Multimedia</h2>
+        </div>
+        <i class="bi bi-play-btn fs-2 text-cyber"></i>
+      </div>
+
+      <div class="card-body-cyber">
+        <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-lg border border-secondary">
+          <iframe 
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+            title="Video del Ejercicio" 
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- EJERCICIO 04: GEOMETRÍA (ÁREA Y PERÍMETRO) -->
+    <section class="cyber-card mb-5">
+      <div class="card-header-cyber d-flex justify-content-between align-items-center">
+        <div>
+          <span class="tag-number">MÓDULO 04</span>
+          <h2 class="h4 mb-0">Calculadora Geométrica (Área y Perímetro)</h2>
+        </div>
+        <i class="bi bi-bounding-box-circles fs-2 text-cyber"></i>
+      </div>
+
+      <div class="card-body-cyber">
+        <div class="row g-4">
+          
+          <!-- Selección de Figura -->
+          <div class="col-md-5 border-end border-secondary border-opacity-25 pe-md-4">
+            <label class="form-label text-light mb-3">Selecciona una figura geométrica:</label>
+            <div class="grid-figuras">
+              <button onclick="seleccionarFigura('cuadrado')" class="btn btn-figura active" id="fig-cuadrado">
+                <i class="bi bi-square fs-3 d-block mb-1"></i>Cuadrado
+              </button>
+              <button onclick="seleccionarFigura('rectangulo')" class="btn btn-figura" id="fig-rectangulo">
+                <i class="bi bi-rectangle fs-3 d-block mb-1"></i>Rectángulo
+              </button>
+              <button onclick="seleccionarFigura('triangulo')" class="btn btn-figura" id="fig-triangulo">
+                <i class="bi bi-triangle fs-3 d-block mb-1"></i>Triángulo
+              </button>
+              <button onclick="seleccionarFigura('rombo')" class="btn btn-figura" id="fig-rombo">
+                <i class="bi bi-diamond fs-3 d-block mb-1"></i>Rombo
+              </button>
+              <button onclick="seleccionarFigura('circulo')" class="btn btn-figura" id="fig-circulo">
+                <i class="bi bi-circle fs-3 d-block mb-1"></i>Círculo
+              </button>
+            </div>
+          </div>
+
+          <!-- Campos de Entrada y Resultados -->
+          <div class="col-md-7 ps-md-4">
+            <h4 id="tituloFigura" class="text-cyber mb-3">Cuadrado</h4>
+            
+            <div id="camposGeometria" class="row g-3 mb-4">
+              <!-- Se cargan dinámicamente con JavaScript -->
+            </div>
+
+            <div class="row g-3">
+              <div class="col-6">
+                <div class="res-card">
+                  <span class="text-muted small d-block">Área</span>
+                  <div id="resArea" class="h3 fw-bold text-white mb-0">0.00</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="res-card">
+                  <span class="text-muted small d-block">Perímetro</span>
+                  <div id="resPerimetro" class="h3 fw-bold text-white mb-0">0.00</div>
+                </div>
+              </div>
+            </div>
+
+            <button onclick="calcularGeometria()" class="btn btn-cyber-action w-100 mt-4">
+              <i class="bi bi-calculator-fill me-2"></i>Calcular Geometría
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-4 text-muted border-top border-secondary border-opacity-25">
+    <p class="mb-0">&copy; 2026 Juan David Valderrama — SENA ADSO Garzón</p>
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Lógica JavaScript -->
+  <script src="javita.js"></script>
+</body>
+</html>
